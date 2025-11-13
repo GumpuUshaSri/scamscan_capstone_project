@@ -1,302 +1,150 @@
----
+ScamScan – AI-Powered Fake Website Detection
 
-ScamScan: AI-Powered Fake Website Detection
+Capstone Project – Text, Web & Social Media Analytics
 
-Capstone Project – Text, Web, and Social Media Analytics
-
-1. Project Overview
-
-ScamScan is an AI-driven system designed to detect fake, fraudulent, or suspicious e-commerce websites.
-The project combines machine learning, NLP-based feature extraction, web scraping, URL analysis, domain intelligence, and FastAPI deployment to deliver real-time scam detection.
-
-This repository includes the complete codebase, datasets, notebooks, documentation, and FastAPI backend for the project.
+This project builds an intelligent system that detects fake, fraudulent, or suspicious e-commerce websites using a combination of machine learning, NLP-based feature engineering, web scraping, URL analysis, and FastAPI deployment.
+The solution identifies scam patterns related to fraudulent stores, fake promotions, phishing pages, and suspicious merchant activity.
 
 
 ---
 
-2. Repository Structure
+Project Structure
 
-scamscan_capstone_project/
-│
-├── data/                     # Final dataset and raw data
-│   └── db_final.csv
-│
-├── notebooks/                # Phase 1, 2, and 3 development notebooks
-│   ├── phase_1.ipynb
-│   ├── phase_2.ipynb
-│   └── phase_3.ipynb
-│
-├── vscode_project/           # FastAPI backend code
-│   ├── main.py
-│   ├── requirements.txt
-│   └── models/
-│       ├── scamscan_model.pkl
-│       └── tfidf_vectorizer.pkl
-│
-├── documents/                # PPT, report, PDF
-│   ├── ScamScan_Presentation.pdf
-│   └── Project_Report.pdf
-│
-└── README.md                 # Project documentation
+1. Data
 
+Contains the processed dataset (db_final.csv) with extracted features such as:
 
----
+URL-based features
 
-3. Problem Statement
+Domain intelligence features
 
-Online scams and fake shopping websites have increased significantly, resulting in financial loss and user trust issues.
-There is a strong need for an automated tool that can evaluate website legitimacy in real time.
+Web-content features
 
+Scam keyword scores
 
----
+Entity counts
 
-4. Objectives
-
-1. Identify potential scam websites using machine learning.
-
-
-2. Extract structured features from URLs, webpage content, and domain metadata.
-
-
-3. Provide a real-time API for scam prediction.
-
-
-4. Support e-commerce safety, merchant verification, and fraud prevention.
-
+TF-IDF vectors
 
 
 
 ---
 
-5. Use Cases
+2. Notebooks
 
-1. Detecting fake online shopping sites
+Includes the full end-to-end workflow:
 
+phase_1.ipynb – Dataset creation, feature extraction, preprocessing
 
-2. Preventing payment fraud
+phase_2.ipynb – Model training, evaluation, saving ML pipelines
 
+phase_3.ipynb – API-ready feature extraction + integration testing
 
-3. Analysing suspicious promotions and offers
-
-
-4. Verifying merchant trustworthiness
-
-
-5. Scanning URLs before completing online transactions
-
+scamscan.ipynb – Additional testing notebook (optional)
 
 
 
 ---
 
-6. Technology Stack
+3. VS Code Project (FastAPI Backend)
 
-Languages: Python
-Libraries: Pandas, NumPy, Scikit-learn, SpaCy, BeautifulSoup, TLDExtract, WHOIS
-Machine Learning: TF-IDF, RandomForestClassifier
-Deployment: FastAPI, Uvicorn
-Tools: Google Colab, VS Code, GitHub
+vscode_project/ contains:
 
+main.py – FastAPI implementation
 
----
+models/ – ML model (scamscan_model.pkl) and TF-IDF vectorizer
 
-7. System Architecture
+requirements.txt – All project dependencies
 
-1. Data collection
 
-
-2. Feature engineering
-
-
-3. NLP preprocessing
-
-
-4. ML model training
-
-
-5. Backend API deployment
-
-
-6. Real-time inference
-
-
-
-
----
-
-8. Project Methodology
-
-The project was built in three distinct phases:
-
-Phase 1: Data collection and preprocessing
-
-Phase 2: Feature engineering and model training
-
-Phase 3: API development and deployment
-
-
-
----
-
-9. Feature Engineering
-
-Extracted 47 features, including:
-
-URL length, digit count, special characters
-
-HTTPS presence
-
-Domain and suffix length
-
-WHOIS domain age
-
-Webpage text processing
-
-Scam keyword frequency
-
-TF-IDF vectorisation
-
-
-
----
-
-10. NLP Techniques Used
-
-Tokenisation
-
-Stopword removal
-
-Lemmatization
-
-Keyword extraction
-
-TF-IDF vectorisation
-
-Named entity detection (SpaCy)
-
-
-
----
-
-11. Why Some NLP Techniques Were Not Used
-
-Although emotion detection, topic modelling, and deep NLP models were explored, they were not included due to:
-
-Limited labelled data
-
-Inconsistency across scam pages
-
-High model complexity without proportional accuracy gain
-
-
-The selected NLP features delivered a strong balance of performance and interpretability.
-
-
----
-
-12. Machine Learning Models Used
-
-Baseline: Logistic Regression
-
-Final Model: Random Forest Classifier (best accuracy, recall, and robustness)
-
-
-
----
-
-13. Model Performance
-
-The final RandomForest model outperformed baselines with strong accuracy and balanced precision-recall scores.
-Full evaluation metrics are included in phase_3.ipynb.
-
-
----
-
-14. API Deployment
-
-The model is deployed using FastAPI with the following endpoints:
-
-/predict
-
-/payment-check
-
-/scan-promotions
-
-/merchant-verification
-
-/risk-score
-
-/full-analysis
-
-
-
----
-
-15. Challenges
-
-1. Noisy website content
-
-
-2. Inconsistent WHOIS responses
-
-
-3. Feature imbalance
-
-
-4. TF-IDF dimensionality control
-
-
-5. Deployment dependency issues
-
-
-
-
----
-
-16. Future Scope
-
-1. Deep learning for webpage content
-
-
-2. Real-time browser extension
-
-
-3. URL screenshot-based classification
-
-
-4. Suspicious transaction analysis
-
-
-5. Mobile app integration
-
-
-
-
----
-
-17. Demo Video
-
-Link to demo video:
-[Insert Google Drive or YouTube link here]
-
-
----
-
-18. How to Run the API
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Start the API:
+Deployed locally using:
 
 uvicorn main:app --reload
 
-Open in browser:
+
+---
+
+4. Documents
+
+Includes:
+
+Capstone PPT (PDF format)
+
+Project Report
+
+Demo Video Link
+
+
+Demo Video (Google Drive):
+https://drive.google.com/file/d/1PZJl-I92qiqYHAGwHZBLuZqt23jB5cL8/view?usp=sharing
+
+
+---
+
+Technology Stack
+
+Python (NumPy, Pandas, Scikit-Learn, SpaCy)
+
+BeautifulSoup for Web Scraping
+
+TLDExtract for URL Parsing
+
+WHOIS for Domain Metadata
+
+FastAPI for API Development
+
+Uvicorn for Hosting
+
+Google Colab for Model Training
+
+VS Code for Backend Development
+
+GitHub for Version Control
+
+
+
+---
+
+API Endpoints (FastAPI)
+
+1. /predict – Main Fake Website Detector
+2. /payment-check – Detects fake payment pages
+3. /scan-promotions – Flags suspicious promotion links
+4. /merchant-verification – Uses WHOIS to inspect domain age and legitimacy
+5. /risk-score – Assigns a numerical website risk score
+6. /full-analysis – Combines all checks into one comprehensive report
+
+Swagger Documentation Auto-Generated at:
 
 http://127.0.0.1:8000/docs
 
 
 ---
 
-If you want, I can also generate a professional project report PDF or review your GitHub repo before submission.
+How to Run Locally
+
+1. Install dependencies:
+
+
+
+pip install -r requirements.txt
+
+2. Run FastAPI server:
+
+
+
+uvicorn main:app --reload
+
+3. Open Swagger UI:
+
+
+
+http://127.0.0.1:8000/docs
+
+
+---
+
+Summary
+
+This repository includes the complete dataset, notebooks, feature engineering pipeline, ML models, backend API, and project documentation for the ScamScan Fake Website Detection System.
+It demonstrates the full lifecycle of a data-driven security solution using text analytics, web mining, and machine learning.
