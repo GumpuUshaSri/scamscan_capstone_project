@@ -76,8 +76,7 @@ Demo Video Link
 
 
 Demo Video (Google Drive):
-https://drive.google.com/file/d/1PZJl-I92qiqYHAGwHZBLuZqt23jB5cL8/view?usp=sharing
-
+https://drive.google.com/file/d/1PZJl-I92qiqYHAGwHZBLuZqt23jB5cL8/preview
 
 ---
 
